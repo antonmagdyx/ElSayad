@@ -322,7 +322,20 @@ h1 {
   height: 24px;
 }
 
+@media (max-width: 768px) {
+  body {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+}
 
+/* تصغير أكثر للشاشات الصغيرة جدًا */
+@media (max-width: 480px) {
+  body {
+    transform: scale(0.75);
+    transform-origin: top center;
+  }
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -404,4 +417,5 @@ h1 {
 
 </body>
 </html>
+
 
