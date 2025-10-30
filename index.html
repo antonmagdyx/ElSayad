@@ -12,34 +12,36 @@
     padding: 0;
   }
 
-  body {
-    background: radial-gradient(
-      ellipse at center,
-      rgba(104,121,173,1) 0%,
-      rgba(54,83,134,1) 35%,
-      #0d1c3b 100%
-    );
-    overflow: hidden;
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    text-align: center;
-    position: relative; 
-    z-index: 1;
-	
-  }
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #001d3d, #003566);
+  color: #fff;
+  position: relative;
+}
   
 
 
   /* محتوى الصفحة */
   .wrap {
-    position: relative;
-    z-index: 2; 
-    max-width: 420px;
-    padding: 36px 20px;
-  }
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
   /* الأمواج */
   .ocean { 
@@ -80,9 +82,9 @@
     50% { transform: translate3d(0,5px,0); }
   }
 
-
+/* لو عندك أزرار أو روابط */
 a, button, .link {
-  color: #2c3e50; 
+  color: #2c3e50; /* لون داكن يناسب الخلفية */
   font-weight: 600;
   text-decoration: none;
 }
@@ -103,7 +105,7 @@ a:hover, button:hover, .link:hover {
   text-align: center;
   padding: 36px 20px 120px;
 
-
+  /* ظهور متأخر ومتدرج */
   opacity: 0;
   transform: translateY(200px);
   animation: wrapFadeUp 3s ease .25s forwards;
@@ -113,8 +115,8 @@ a:hover, button:hover, .link:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 .profile-pic {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid rgba(255,255,255,0.8);
@@ -126,7 +128,7 @@ a:hover, button:hover, .link:hover {
 
 @keyframes float {
   0%, 100% { transform: translateY(0);  }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(10px); }
   
 }
 h1 {
@@ -161,7 +163,7 @@ h1 {
   border-radius: 30px;
   background: linear-gradient(135deg, #001f3f, #003f5c, #004f6d, #002a38);
   background-size: 300% 300%;
-  animation: linkGradient 8s ease infinite; 
+  animation: linkGradient 8s ease infinite; /* حركة بسيطة للتدرج */
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -170,14 +172,14 @@ h1 {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-
+/* تأثير الحركة لتدرج الخلفية */
 @keyframes linkGradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-
+/* عند المرور بالماوس */
 .link:hover {
   transform: translateY(-4px);
   background: linear-gradient(135deg, #f8f4e1, #ffffff, #f8f4e1);
@@ -247,7 +249,7 @@ h1 {
   footer.footer{margin-top:28px;color:rgba(255,255,255,0.95);font-size:13px}
   footer.footer a{color:inherit;text-decoration:underline}
 
-
+  /* صف الأيقونات السفلية */
   .social-icons {
     margin-top: 30px;
     display: flex;
@@ -264,23 +266,22 @@ h1 {
     color: #000;
   }
 
-  @media(max-width:420px){
-    .wrap{padding-bottom:140px}
-    .link{max-width:90%;padding:12px}
-    .profile-pic{width:120px;height:120px}
-		
-
-  }
+@media (max-width: 480px) {
+  h1 { font-size: 18px; }
+  .link { max-width: 85%; padding: 10px 14px; font-size: 14px; }
+  .icon { width: 20px; height: 20px; }
+  .profile-pic { width: 100px; height: 100px; }
+}
   
   .social-icon.snapchat .icon {
   width: 20px;
   height: 20px;
-  fill: #fff; 
+  fill: #fff; /* أبيض افتراضيًا مثل باقي الأيقونات */
   transition: transform 0.3s ease, fill 0.3s ease, filter 0.3s ease;
 }
 
 .social-icon.snapchat:hover .icon {
-  fill: #fffc00; 
+  fill: #fffc00; /* لون سناب شات عند الوقوف */
   transform: scale(1.2);
   filter: drop-shadow(0 0 6px #fffc00);
 }
@@ -372,4 +373,3 @@ h1 {
 
 </body>
 </html>
-
