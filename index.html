@@ -13,15 +13,20 @@
   }
 
 body {
-  margin: 0;
-  height: 100vh;
-  overflow: hidden;
+margin: 0;
+ padding: 0;
+ height: 100%;
+overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #001d3d, #003566);
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	background-size: cover;
+
   color: #fff;
   position: relative;
 }
@@ -45,13 +50,13 @@ body {
 
   /* الأمواج */
   .ocean { 
-    height: 5%;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: #015871;
-    z-index: 0;
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #015871;
+  overflow: hidden;
   }
 
   .wave {
@@ -105,6 +110,14 @@ a:hover, button:hover, .link:hover {
   text-align: center;
   padding: 36px 20px 120px;
 
+  /* ظهور متأخر ومتدرج */
+  opacity: 0;
+  transform: translateY(200px);
+  animation: wrapFadeUp 3s ease .25s forwards;
+}
+
+@keyframes wrapFadeUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 .profile-pic {
   width: 120px;
@@ -314,18 +327,26 @@ h1 {
   height: 24px;
 }
 
+/* تصغير الصفحة مع ضبط التمركز العمودي */
 @media (max-width: 768px) {
   body {
     transform: scale(0.85);
     transform-origin: top center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
-/* تصغير أكثر للشاشات الصغيرة جدًا */
 @media (max-width: 480px) {
   body {
     transform: scale(0.75);
     transform-origin: top center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 </style>
@@ -409,6 +430,7 @@ h1 {
 
 </body>
 </html>
+
 
 
 
