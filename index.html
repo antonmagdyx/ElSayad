@@ -287,17 +287,25 @@ footer.footer {
   }
 
 
-footer.footer {
-	font-size: 0.7rem !important;
-  	margin-top: 8px !important;
-	  position: fixed;
-	  bottom: 20px; /* المسافة من أسفل الشاشة */
-	  left: 0;
-	  width: 100%;
-	  text-align: center;
-	  font-size: 0.7rem !important;
-	  color: #fff; /* لو الخلفية غامقة */
-	  z-index: 10;
+.page-footer {
+  position: fixed;
+  bottom: 20px; /* يبعد عن آخر الشاشة بـ20px */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #fff;
+  z-index: 100;
+}
+
+.page-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.page-footer a:hover {
+  text-decoration: underline;
 }
 
 </style>
@@ -371,5 +379,6 @@ footer.footer {
 
 </body>
 </html>
+
 
 
