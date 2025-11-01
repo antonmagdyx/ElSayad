@@ -3,84 +3,52 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Hurghada Activites</title>
+<title>Lialy Sahl Hasheesh</title>
 
 <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  :root{
+    --accent: rgba(255,255,255,0.15);
+    --accent-hover: rgba(255,255,255,0.3);
   }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
 
 body {
-margin: 0;
- padding: 0;
- height: 100%;
-overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(-45deg,
+    #dba514,
+    #d16ba5,
+    #b26ee5,
+    #6654ff,
+    #4a90e2,
+    #0083b0,
+    #00b4db,
+    #34e89e,
+    #38ef7d,
+    #f7971e,
+    #f5576c,
+    #ec6f66,
+    #fa709a,
+    #a044ff,
+    #6a11cb,
+    #2575fc,
+    #1d2671,
+    #2a5298);
+  background-size: 1000% 1000%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+  margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #001d3d, #003566);
-	  background-repeat: no-repeat;
-	  background-attachment: fixed;
-	background-size: cover;
-
   color: #fff;
-  position: relative;
-}
-  
-
-
-  /* محتوى الصفحة */
-  .wrap {
-    position: relative;
-    z-index: 2; /* يخلي المحتوى فوق الأمواج */
-    max-width: 420px;
-    padding: 36px 20px;
-	display: flex;
-  flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  }
-
-  /* الأمواج */
-  .ocean { 
-  height: 150px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background: #015871;
-  overflow: hidden;
-  }
-
-  .wave {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
-  position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 7s cubic-bezier(0.36,0.45,0.63,0.53) infinite;
-  transform: translate3d(0,0,0);
-  will-change: transform;
 }
 
-.wave:nth-of-type(2) {
-  top: -175px;
-  animation: wave 7s cubic-bezier(0.36,0.45,0.63,0.53) -0.125s infinite,
-             swell 7s ease -1.25s infinite;
-  opacity: 1;
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-
-  @keyframes wave {
-    0% { margin-left: 0; }
-    100% { margin-left: -1600px; }
-  }
 
   @keyframes swell {
     0%, 100% { transform: translate3d(0,-25px,0); }
@@ -132,8 +100,8 @@ a:hover, button:hover, .link:hover {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateX(10);  }
-  50% { transform: translateX(-10px); }
+  0%, 100% { transform: translateY(0);  }
+  50% { transform: translateY(-10px); }
   
 }
 h1 {
@@ -221,15 +189,6 @@ h1 {
 
 .link.tiktok:hover .icon {
   fill: #000000; 
-}
-
-  .link.GMaps .icon {
-  fill: #ffffff; 
-  transition: fill 0.3s ease;
-}
-
-.link.GMaps:hover .icon {
-  fill: #f7b0b0; 
 }
 
   .link.instagram .icon {
@@ -327,28 +286,7 @@ h1 {
   height: 24px;
 }
 
-/* تصغير الصفحة مع ضبط التمركز العمودي */
-@media (max-width: 768px) {
-  body {
-    transform: scale(0.85);
-    transform-origin: top center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
 
-@media (max-width: 480px) {
-  body {
-    transform: scale(0.75);
-    transform-origin: top center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -371,14 +309,9 @@ h1 {
         <span class="label">Instagram</span>
       </a>
 
-      <a class="link Facebook" href="https://www.instagram.com/hurghada_.activites?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+      <a class="link Facebook" href="https://www.facebook.com/share/1FUV86xfVn/?mibextid=wwXIfr" target="_blank">
         <svg class="icon" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.34 2 2 6.48 2 12.07c0 5 3.66 9.13 8.44 9.92v-7.03H8.07V12.07h2.37V9.88c0-2.34 1.4-3.63 3.52-3.63.99 0 2.02.18 2.02.18v2.22h-1.14c-1.12 0-1.46.69-1.46 1.4v1.67h2.49l-.4 2.89h-2.09v7.03C18.34 21.2 22 17.07 22 12.07z" /></svg>
         <span class="label">Facebook</span>
-      </a>
-
-      <a class="link GMaps" href="https://maps.app.goo.gl/yAydFaJmYRVjojdF6?g_st=com.google.maps.preview.copy" target="_blank">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <span class="label">Location</span>
       </a>
 
 		  <a class="link whatsapp" href="https://wa.me/+201009538648" target="_blank">
@@ -409,8 +342,7 @@ h1 {
 
     <div class="social-icons">
       <a href="https://www.instagram.com/hurghada_.activites?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.instagram.com/hurghada_.activites?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://maps.app.goo.gl/XXXX" target="_blank" class="map-icon">  <i class="fa-solid fa-location-dot"></i></a>
+      <a href="https://www.facebook.com/share/1FUV86xfVn/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
       <a href="https://wa.me/+201009538648" target="_blank"><i class="fab fa-whatsapp"></i></a>
 	  <a href="https://wa.me/+201274980809" target="_blank"><i class="fab fa-whatsapp"></i></a>
 	  <a href="https://www.tiktok.com/@hurghada_activities" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -430,8 +362,3 @@ h1 {
 
 </body>
 </html>
-
-
-
-
-
